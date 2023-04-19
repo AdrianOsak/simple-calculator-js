@@ -2,45 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <script defer src="js/script.js"></script>
-    <title>Simple calculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script defer src="js/script.js"></script>
+  <title>Simple calculator</title>
 </head>
 
 <body>
-    <div class="App">
-        <p class="result">Result</p>
-        <div class="keyboard">
-            <button class="button button__plus">+</button>
-            <button class="button button__minus">-</button>
-            <button class="button button__time">*</button>
-            <button class="button button__division">/</button>
-            <button class="button button__comma">,</button>
-            <button class="button button__equal">=</button>
-            <button class="button button__delete">Del.</button>
-            <button class="button button__clearAll">C</button>
-            <button class="button button__clearLast">CE</button>
-            <div class="keyboard__numbers">
-                <button class="button button__number">7</button>
-                <button class="button button__number">8</button>
-                <button class="button button__number">9</button>
-                <button class="button button__number">4</button>
-                <button class="button button__number">5</button>
-                <button class="button button__number">6</button>
-                <button class="button button__number">1</button>
-                <button class="button button__number">2</button>
-                <button class="button button__number">3</button>
-                <button class="button button__number0">0</button>
-            </div>
-        </div>
+  <div class="App">
+    <input type="text" id="result" class="display" placeholder="0" disabled style="text-align: right;">
+    <div class="keyboard">
+      <button class="button button_plus" id="function_btn" value="+">+</button>
+      <button class="button button_minus" id="function_btn" value="-">-</button>
+      <button class="button button_time" id="function_btn" value="*">*</button>
+      <button class="button button_division" id="function_btn" value="/">/</button>
+      <button class="button button_comma" value=",">,</button>
+      <button class="button button_equal" id="equal" value="=">=</button>
+      <button class="button button_clear" id="clear" value="clear">C</button>
+      <div class="keyboard_numbers">
+        <button class="button button_number" value="7">7</button>
+        <button class="button button_number" value="8">8</button>
+        <button class="button button_number" value="9">9</button>
+        <button class="button button_number" value="4">4</button>
+        <button class="button button_number" value="5">5</button>
+        <button class="button button_number" value="6">6</button>
+        <button class="button button_number" value="1">1</button>
+        <button class="button button_number" value="2">2</button>
+        <button class="button button_number" value="3">3</button>
+        <button class="button button_number0" value="0">0</button>
+      </div>
     </div>
+  </div>
 
 </body>
 
