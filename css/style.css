@@ -25,10 +25,12 @@ body {
 }
 
 .display {
+  height: 40px;
   border: solid 1px;
   background-color: hsl(180, 20%, 85%);
   padding: 10px;
   margin: 15px;
+  text-align: right;
 }
 
 .keyboard {
