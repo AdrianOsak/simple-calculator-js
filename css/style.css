@@ -51,7 +51,7 @@ body {
   background-color: hsl(180, 20%, 78%);
 }
 
-.button_clear {
+#clear {
   grid-row-start: 1;
   border: solid 1px hsl(0, 0%, 0%);
   color: hsl(0, 0%, 100%);
@@ -62,7 +62,7 @@ body {
   background-color: hsl(0, 100%, 74%);
 }
 
-.button_equal {
+#equal {
   background-color: hsl(240, 60%, 72%);
   grid-column-start: 4;
   grid-row-start: 4;
@@ -73,32 +73,33 @@ body {
   background-color: hsl(240, 60%, 82%);
 }
 
-.button_plus {
+#plus {
   grid-column-start: 4;
   grid-row-start: 2;
   grid-row-end: 4;
 }
 
-.button_minus {
+#minus {
   grid-column-start: 4;
   grid-row-start: 1;
 }
 
-.button_time {
+#time {
   grid-column-start: 3;
   grid-row-start: 1;
 }
 
-.button_comma {
+#comma {
+  background-color: hsl(180, 20%, 80%);
   grid-column-start: 3;
   grid-row-start: 5;
 }
 
-#function_btn {
+.button_function {
   background-color: hsl(160, 100%, 35%);
 }
 
-#function_btn:hover {
+.button_function:hover {
   background-color: hsl(160, 100%, 45%);
 }
 
@@ -110,7 +111,7 @@ body {
   gap: 10px;
 }
 
-.button_number0 {
+#number0 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
