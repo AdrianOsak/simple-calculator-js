@@ -98,11 +98,11 @@ body {
 }
 
 .button_function {
-  background-color: hsl(160, 100%, 35%);
+  background-color: hsl(180, 20%, 55%);
 }
 
 .button_function:hover {
-  background-color: hsl(160, 100%, 45%);
+  background-color: hsl(180, 20%, 65%);
 }
 
 .keyboard_numbers {
