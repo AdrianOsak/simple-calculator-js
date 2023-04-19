@@ -1,6 +1,6 @@
 {
     const clear = () => {
-        document.getElementById("result").value = "0"
+        document.getElementById("result").value = ""
     }
 
     const clearButton = document.querySelector(".button_clear");
