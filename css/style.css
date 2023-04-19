@@ -77,17 +77,17 @@ body {
 
 #plus {
   grid-column-start: 4;
-  grid-row-start: 2;
+  grid-row-start: 3;
   grid-row-end: 4;
 }
 
 #minus {
   grid-column-start: 4;
-  grid-row-start: 1;
+  grid-row-start: 2;
 }
 
 #time {
-  grid-column-start: 3;
+  grid-column-start: 4;
   grid-row-start: 1;
 }
 
