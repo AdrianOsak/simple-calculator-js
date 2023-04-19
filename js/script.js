@@ -3,6 +3,6 @@
         document.getElementById("result").value = ""
     }
 
-    const clearButton = document.querySelector(".button_clear");
+    const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", clear);
 }
