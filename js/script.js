@@ -1,6 +1,9 @@
 {
+  let expression = "";
+
   const clear = () => {
     document.getElementById("result").textContent = "0"
+    expression = "";
   }
 
   const clearButton = document.getElementById("clear");
@@ -15,7 +18,6 @@
   const removeButton = document.getElementById("delete");
   removeButton.addEventListener("click", remove);
 
-  let expression = "";
 
   handleNumberButtons = (value) => {
     expression += value;
