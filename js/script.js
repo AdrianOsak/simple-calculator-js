@@ -53,6 +53,7 @@
     let outcome = eval(equation);
 
     document.getElementById("result").textContent = outcome;
+    expression = "";
   };
   const equalButton = document.getElementById("equal");
   equalButton.addEventListener("click", solve);
