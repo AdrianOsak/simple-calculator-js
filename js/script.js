@@ -30,7 +30,6 @@
   updateDisplay = (expression) => {
     const display = document.getElementById("result");
     display.textContent = expression;
-    console.log(expression);
   };
 
   const numbers = document.querySelectorAll(".button_number");
@@ -52,7 +51,7 @@
     let outcome = eval(equation);
 
     document.getElementById("result").textContent = outcome;
-  }
+  };
   const equalButton = document.getElementById("equal");
   equalButton.addEventListener("click", solve);
 
@@ -60,4 +59,4 @@
 /*
 1. Trzeba utworzyć zmienną, która będzie przechowywała wyrażenie i będzie zamieniać operatory matematyczne w przypadku naciśnięcia kilka razy przycisków z operatorem.
 2. Trzeba sprawić by po każdym kliknięciu liczby, przycisku C lub = wyrażenie było resetowane i przyjmowało wartość 0.
-3. (OPCJONALNIE - Domyślnie najlepiej) Dodać obsługę klawiwatury.*/
+3. (OPCJONALNIE - Domyślnie najlepiej) Dodać obsługę klawiwatury. */
