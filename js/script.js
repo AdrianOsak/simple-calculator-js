@@ -6,6 +6,15 @@
   const clearButton = document.getElementById("clear");
   clearButton.addEventListener("click", clear);
 
+  const remove = () => {
+    document.getElementById("result").textContent = expression;
+    expression = expression.slice(0, -1);
+    updateDisplay(expression)
+  }
+
+  const removeButton = document.getElementById("delete");
+  removeButton.addEventListener("click", remove);
+
   let expression = "";
 
   handleNumberButtons = (value) => {
@@ -14,14 +23,14 @@
   };
 
   handleFunctionButtons = (value) => {
-    expression += ` ${value} `;
+    expression += `${value}`;
     updateDisplay(expression);
-    console.log(expression);
   };
 
   updateDisplay = (expression) => {
     const display = document.getElementById("result");
     display.textContent = expression;
+    console.log(expression);
   };
 
   const numbers = document.querySelectorAll(".button_number");
@@ -50,4 +59,5 @@
 }
 /*
 1. Trzeba utworzyć zmienną, która będzie przechowywała wyrażenie i będzie zamieniać operatory matematyczne w przypadku naciśnięcia kilka razy przycisków z operatorem.
-2. Trzeba sprawić by po każdym kliknięciu liczby, przycisku C lub = wyrażenie było resetowane i przyjmowało wartość 0.*/
+2. Trzeba sprawić by po każdym kliknięciu liczby, przycisku C lub = wyrażenie było resetowane i przyjmowało wartość 0.
+3. (OPCJONALNIE - Domyślnie najlepiej) Dodać obsługę klawiwatury.*/
