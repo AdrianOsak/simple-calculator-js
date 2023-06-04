@@ -1,79 +1,86 @@
-/*{
-  let expression = "";
-  let mathSymbol = "";
-  const clear = () => {
-    document.getElementById("result").textContent = "0"
-    expression = "";
-  };
-
-  const clearButton = document.getElementById("clear");
-  clearButton.addEventListener("click", clear);
-
-  const remove = () => {
-    document.getElementById("result").textContent = expression;
-    expression = expression.slice(0, -1);
-    updateDisplay(expression)
-  };
-
-  const removeButton = document.getElementById("delete");
-  removeButton.addEventListener("click", remove);
+{
+    let expression = "";
+    let mathSymbol = "";
 
 
-  handleNumberButtons = (value) => {
-    expression += value;
-    updateDisplay(expression);
-  };
+    let handleNumberButtons = (value) => {
+        expression += value;
+        updateDisplay(expression);
+    };
 
-  handleFunctionButtons = (value) => {
-    mathSymbol += `${value}`;
-    expression = expression + mathSymbol;
-    updateDisplay(expression);
-  };
+    let handleFunctionButtons = (value) => {
+        if (mathSymbol !== "" && expression.slice(-1) !== mathSymbol) {
+            updateDisplay();
+        }
 
-  updateDisplay = (expression) => {
-    const display = document.getElementById("result");
-    display.textContent = expression;
-  };
+        if (mathSymbol !== "" && isMathSymbol(expression.slice(-1))) {
+            expression = expression.slice(0, -1);
 
-  const numbers = document.querySelectorAll(".button_number");
-  numbers.forEach(number => {
-    number.addEventListener('click', () => {
-      handleNumberButtons(number.textContent);
-    });
-  });
+        } else {
+            mathSymbol = value;
+            expression += mathSymbol;
+        }
 
-  const operations = document.querySelectorAll(".button_function");
-  operations.forEach(operation => {
-    operation.addEventListener('click', () => {
-      handleFunctionButtons(operation.textContent);
-    });
-  });
+        updateDisplay(expression);
+    };
 
-  const solve = () => {
-    let equation = document.getElementById("result").textContent;
-    if (equation.includes(",")) {
-      let numEquation = equation.replace(",", ".");
-      let outcome = eval(parseFloat(numEquation));
-      document.getElementById("result").textContent = outcome;
-      expression = "";
-      console.log(outcome);
-    }
-    else {
-      let outcome = eval(equation);
-      document.getElementById("result").textContent = outcome;
-      expression = "";
-      console.log(outcome);
+    let isMathSymbol = (char) => {
+        return ['+', '-', '*', '/'].includes(char);
     }
 
-  };
-  const equalButton = document.getElementById("equal");
-  equalButton.addEventListener("click", solve);
+    let handleDecimalButton = () => {
+        if (!expression.includes(".")) {
+            expression += ".";
+        }
+        updateDisplay(expression);
+    };
+
+    let calculate = () => {
+        let result = eval(expression);
+        expression = result.toString();
+        updateDisplay(expression);
+    };
+
+    let clear = () => {
+        expression = "";
+        mathSymbol = "";
+        updateDisplay(expression);
+    };
+
+    const remove = () => {
+        document.getElementById("result").textContent = expression;
+        expression = expression.slice(0, -1);
+        updateDisplay(expression)
+    };
+
+    const removeButton = document.getElementById("delete");
+    removeButton.addEventListener("click", remove);
+
+    let updateDisplay = (value) => {
+        document.querySelector(".display").textContent = value;
+    };
+
+    const numbers = document.querySelectorAll(".button_number");
+    numbers.forEach(number => {
+        number.addEventListener('click', () => {
+            handleNumberButtons(number.textContent);
+        });
+    });
+
+    const operations = document.querySelectorAll(".button_function");
+    operations.forEach(operation => {
+        operation.addEventListener('click', () => {
+            handleFunctionButtons(operation.textContent);
+        });
+    });
+
+    const decimal = document.getElementById("comma");
+    decimal.addEventListener("click", handleDecimalButton);
+
+    const clearButton = document.getElementById("clear");
+    clearButton.addEventListener("click", clear);
+
+    const equalButton = document.getElementById("equal");
+    equalButton.addEventListener("click", calculate);
 
 }
-/*
-1. Trzeba utworzyć zmienną, która będzie przechowywała wyrażenie i będzie zamieniać operatory matematyczne w przypadku naciśnięcia kilka razy przycisków z operatorem.
-2. Nie ma obsługi ułamków - liczby wpisane po przecinku traktuje jako całkowite.
-3. (OPCJONALNIE - Domyślnie najlepiej) Dodać obsługę klawiwatury. 
-
-Pomysł:
-Wyrażenie zrobić jako tablicę i na kolejne kliknięcia dodawać do niej kolejne liczby, które by były konwertowane z łancucha znaków na liczbę i musiałyby się kończyć w chwili naciśnięcia klawisza z operatorem matematycznym */
